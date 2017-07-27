@@ -24,3 +24,16 @@ function contains(selector, text) {
     return RegExp(text).test(element.textContent);
   });
 }
+
+
+function win (clicked) {
+  var memberOf = clicked.className.split(/\s+/);
+  for (var i = 0; i < memberOf.length; i++) {
+    var testClass = '.' + memberOf[i];
+    var items = contains('#tictactoe ' + testClass, turn);
+    if (items.length == N_SIZE) {
+      return true;
+    }
+  }
+  return false;
+}
